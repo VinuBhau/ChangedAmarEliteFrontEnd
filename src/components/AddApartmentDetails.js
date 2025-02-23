@@ -29,6 +29,7 @@ function AddApartmentDetails() {
       RegistrationDate: RegistrationDate.current.value,
     };
 
+
     axios
       .post("http://localhost:9000/api/admin/insertApartmentDetails", payload)
       .then((response) => {

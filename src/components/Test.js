@@ -1,6 +1,6 @@
 import React from 'react';
 import { Bell, Building2, ChevronRight, MessageSquare, Shield, Users } from 'lucide-react';
-
+import Home from './Home';
 const EnhancedLandingPage = () => {
   const features = [
     {
@@ -55,6 +55,7 @@ const EnhancedLandingPage = () => {
 
   return (
     <div className="bg-gray-900 text-white min-h-screen">
+      
       {/* Header Section */}
       <header className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
         <div className="max-w-8xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">

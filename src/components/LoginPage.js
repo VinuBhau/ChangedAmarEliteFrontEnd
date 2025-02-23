@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, LogIn } from "lucide-react";
 
-const LoginPage = ({ setLoginStatus, setUserType, setUsername, setOid, oid }) => {
+const LoginPage = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -11,6 +11,10 @@ const LoginPage = ({ setLoginStatus, setUserType, setUsername, setOid, oid }) =>
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+  const [Username,setUsername] = useState("");
+  const [UserType,setUserType] = useState("");
+  const [Oid,setOid] = useState("");
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     // Clear error message when user starts typing
@@ -18,6 +22,7 @@ const LoginPage = ({ setLoginStatus, setUserType, setUsername, setOid, oid }) =>
   };
 
   const handleSubmit = async (e) => {
+    alert("inside handle submit")
     e.preventDefault();
     setIsLoading(true);
     setMessage("");
@@ -38,7 +43,9 @@ const LoginPage = ({ setLoginStatus, setUserType, setUsername, setOid, oid }) =>
         setUserType(data.userType);
         setOid(data.oid)
         setUsername(data.ofname + " " + data.olname)
-        setLoginStatus(true);
+
+        window.location.href = "/adminDashboard";
+        
       } else {
         throw new Error(data.message || "Login failed");
       }

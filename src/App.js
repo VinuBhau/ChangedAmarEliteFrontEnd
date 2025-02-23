@@ -6,61 +6,43 @@ import Owner from "./components/Owner";
 import Security from "./components/Security";
 import AdminDashboard from "./components/AdminDashboard";
 import Home from "./components/Home";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Contact from "./components/Contact";
+import Information from "./components/Information";
+import About from "./components/About";
+import LogIn from "./components/LoginPage";
+import Test from "./components/Test"; 
+import AddFlatOwner from "./components/AddFlatOwner";
+import AddEmployee from "./components/Addemployee";
+import Financialdata from "./components/Financialdata";
+import AddApartmentDetails from "./components/AddApartmentDetails";
+import FinancialExpenses from "./components/FinancialExpenses";
+function App() {
 
-function App() 
-{
-  const [loginStatus, setLoginStatus] = useState(false);
-  const [userType, setUserType] = useState("");
-  const [oid, setOid] = useState()
-  const [firstTime, setFirstTime] = useState(true);
-  const [username, setUsername] = useState("");
-  const handleLogout = () => {
-    setLoginStatus(false);
-    setUserType("");
-    setUsername("");
-  };
   return (
     <div className="App">
-      {!loginStatus ? 
-      (
-        <Home
-          firstTime={firstTime}
-          setFirstTime={setFirstTime}
-          setOid={setOid}
-          oid={oid}
-          setLoginStatus={setLoginStatus}
-          setUserType={setUserType}
-          setUsername={setUsername} />
-      ) : userType === "Admin" ? 
-      (
-        <AdminDashboard setLoginStatus={setLoginStatus} />
-      ) : userType === "Chairman" ? 
-      (
-        <Chairman setLoginStatus={setLoginStatus} />
-      ) : userType === "Secretary" ? 
-      (
-        <Secretary setLoginStatus={setLoginStatus} />
-      ) : userType === "Owner" ? 
-      (
-        <div>
-          {/* Header Section */}
-          <header className="bg-white shadow-md p-4 flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-gray-800">
-              Welcome, <span className="text-blue-500">{username || "Owner"}!</span>
-            </h1>
-            <button
-              className="bg-blue-400 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition duration-200"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
-          </header>
-          <Owner username={username} setLoginStatus={setLoginStatus} oid={oid} />
-        </div>
-      ) : 
-      (
-        <Security setLoginStatus={setLoginStatus} />
-      )}
+    <Routes>
+      <Route path = '/' element ={<Home/>}/>
+      <Route path = '/login' element = {<LogIn/>}/>
+      <Route path = '/test' element = {<Test/>}/>
+      <Route path = '/adminDashboard' element ={<AdminDashboard/>}/>
+      <Route path = '/chairman' element ={<Chairman/>}/>
+      <Route path = '/secretary' element ={<Secretary/>}/>
+      <Route path = '/owner' element ={<Owner/>}/>
+      <Route path = '/security' element ={<Security/>}/>
+      <Route path = '/contact' element ={<Contact/>}/>
+      <Route path = '/information' element ={<Information/>}/>
+      <Route path = '/about' element ={<About/>}/>
+      <Route path = '/add-flat-owner' element ={<AddFlatOwner/>}/>
+      <Route path = '/add-employee' element ={<AddEmployee/>}/>
+      <Route path = '/financial-year' element ={<Financialdata/>}/>
+      <Route path = '/add-apartment' element ={<AddApartmentDetails/>}/>
+      <Route path = '/financial-expenses' element ={<FinancialExpenses/>}/> 
+
+
+    </Routes>
+
+    
     </div>
   );
 }

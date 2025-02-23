@@ -1,17 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
 import AddOwner from "./Addowner";
 import Addemployee from "./Addemployee";
 import FinancialExpenses from "./FinancialExpenses";
 import AddApartmentDetails from "./AddApartmentDetails";
 import Adminsettings from "./Adminsettings";
 
-function AdminDashboard({ setLoginStatus }) {
+function AdminDashboard() {
   const logout = () => {
-    setLoginStatus(false);
+   
+      window.location.href = "/login";
   };
   return (
-    <Router>
+  
       <div className="min-h-screen bg-gradient-to-b from-blue-400 to-indigo-600 px-6 py-10">
         <h1 className="text-3xl sm:text-5xl font-extrabold text-center text-white mb-12">
           Admin Dashboard
@@ -19,7 +20,7 @@ function AdminDashboard({ setLoginStatus }) {
         <nav className="bg-white shadow-xl rounded-lg mb-12 p-4">
           <div className="max-w-7xl mx-auto flex flex-wrap justify-center sm:justify-between gap-6">
             <Link
-              to="/add-owner"
+              to="/add-flat-owner"
               className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg transform transition duration-300 hover:scale-105 shadow-lg hover:bg-gradient-to-r hover:from-cyan-600 hover:to-blue-600"
             >
               Add Flat Owner
@@ -68,7 +69,7 @@ function AdminDashboard({ setLoginStatus }) {
           </Routes>
         </div>
       </div>
-    </Router>
+   
   );
 }
 
