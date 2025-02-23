@@ -14,7 +14,7 @@ function ChairmanMessages() {
       flatno: flatno1,
     };
 
-    await axios.post("http://localhost:9000/api/chairman/postmessage", payload)
+    await axios.post("https://amarelitebackend.onrender.com/api/chairman/postmessage", payload)
       .then((response) => {
         alert("Message sent successfully...");
       })
@@ -57,7 +57,7 @@ export function ChairmanMNotice() {
     const payload1 = {
       notice: notice1,
     };
-    await axios.post("http://localhost:9000/api/chairman/postnotice", payload1)
+    await axios.post("https://amarelitebackend.onrender.com/api/chairman/postnotice", payload1)
       .then((response) => {
         alert("Notice posted successfully...");
       })

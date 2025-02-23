@@ -7,7 +7,7 @@ function Owner({ username, setLoginStatus ,oid}) {
   const [owners, setOwners] = useState([]); // Fixed variable name
 
   useEffect(() => {
-    axios.get("http://localhost:9000/api/owner/getmaintainence/" + oid)
+    axios.get("https://amarelitebackend.onrender.com/api/owner/getmaintainence/" + oid)
       .then(response => {
         setOwners(response.data);
       })
@@ -22,7 +22,7 @@ function Owner({ username, setLoginStatus ,oid}) {
 
   const updatestatus = () => {
 
-    axios.post("http://localhost:9000/api/owner/updatepaymentstatus", { username: username })
+    axios.post("https://amarelitebackend.onrender.com/api/owner/updatepaymentstatus", { username: username })
       .then(response => {
         alert("Payment status updated!!!")
       })

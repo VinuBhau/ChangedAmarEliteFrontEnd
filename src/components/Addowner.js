@@ -26,7 +26,7 @@ const AddOwner = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/admin/getoidcount")
+      .get("https://amarelitebackend.onrender.com/api/admin/getoidcount")
       .then((response) => {
         setFormData((prevData) => ({
           ...prevData,
@@ -47,7 +47,7 @@ const AddOwner = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:9000/api/admin/addowner",
+        "https://amarelitebackend.onrender.com/api/admin/addowner",
         formData
       );
       alert("Owner added successfully!");

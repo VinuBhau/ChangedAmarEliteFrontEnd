@@ -12,7 +12,7 @@ function AdminSettings() {
     const payload4 = {
       annualmaintainence: annualmaintainence1
     }
-    axios.post("http://localhost:9000/api/admin/setannualmaintainence", payload4)
+    axios.post("https://amarelitebackend.onrender.com/api/admin/setannualmaintainence", payload4)
       .then((response) => {
         alert("Annual Maintainence amount set successfully!");
       })
@@ -29,7 +29,7 @@ function AdminSettings() {
       financialyear: financialyear1,
     };
     axios
-      .post("http://localhost:9000/api/admin/setfinancialyear", payload)
+      .post("https://amarelitebackend.onrender.com/api/admin/setfinancialyear", payload)
       .then((response) => {
         alert("Financial year set successfully!");
       })

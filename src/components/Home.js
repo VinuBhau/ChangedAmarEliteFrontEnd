@@ -16,7 +16,7 @@
 
 //   useEffect(() => {
 //     axios
-//       .get("http://localhost:9000/api/getAptname")
+//       .get("https://amarelitebackend.onrender.com/api/getAptname")
 //       .then((response) => {
 //         setApartmentname(response.data[0].Apartmentname);
 //       })
@@ -139,7 +139,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/getAptname")
+      .get("https://amarelitebackend.onrender.com/api/getAptname")
       .then((response) => {
         setApartmentname(response.data[0].Apartmentname);
       })

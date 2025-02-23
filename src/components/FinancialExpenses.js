@@ -23,7 +23,7 @@ const FinancialExpenses = () => {
   // Fetch overall summary expenses
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/admin/getsummaryexpenses")
+      .get("https://amarelitebackend.onrender.com/api/admin/getsummaryexpenses")
       .then((response) => {
         setExpenseData(response.data || []);
       })
@@ -43,7 +43,7 @@ const FinancialExpenses = () => {
     };
 
     axios
-      .post("http://localhost:9000/api/admin/getmonthwiseexpenses", payload)
+      .post("https://amarelitebackend.onrender.com/api/admin/getmonthwiseexpenses", payload)
       .then((response) => {
         const data = response.data;
 

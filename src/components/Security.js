@@ -13,7 +13,7 @@ function Visitors({ setLoginStatus }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/security/getallvisitors")
+      .get("https://amarelitebackend.onrender.com/api/security/getallvisitors")
       .then((response) => {
         setVisitors(response.data);
       })
@@ -38,7 +38,7 @@ function Visitors({ setLoginStatus }) {
     };
 
     axios
-      .post("http://localhost:9000/api/security/addvisitors", payload)
+      .post("https://amarelitebackend.onrender.com/api/security/addvisitors", payload)
       .then(() => {
         alert("Visitor added successfully!");
         vname.current.value = "";

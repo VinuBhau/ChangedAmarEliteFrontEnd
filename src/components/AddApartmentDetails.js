@@ -31,7 +31,7 @@ function AddApartmentDetails() {
 
 
     axios
-      .post("http://localhost:9000/api/admin/insertApartmentDetails", payload)
+      .post("https://amarelitebackend.onrender.com/api/admin/insertApartmentDetails", payload)
       .then((response) => {
         alert("Apartment details have been successfully inserted!");
         // Clear input fields after submission

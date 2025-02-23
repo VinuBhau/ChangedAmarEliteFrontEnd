@@ -13,7 +13,7 @@ function Employee() {
     const saldate = useRef("")
 
     useEffect(()=>{
-        axios.get("http://localhost:9000/api/secretary/getfinancialyear")
+        axios.get("https://amarelitebackend.onrender.com/api/secretary/getfinancialyear")
         .then(response=>{
             setFinancialyear(response.data)
         })
@@ -23,7 +23,7 @@ function Employee() {
     },[financialyear])
 
     useEffect(() => {
-        axios.get("http://localhost:9000/api/secretary/getallemployees/"+financialyear)
+        axios.get("https://amarelitebackend.onrender.com/api/secretary/getallemployees/"+financialyear)
             .then(response => {
                 setEmployee(response.data)
             })
@@ -47,7 +47,7 @@ function Employee() {
                 sstatus: sstatus1,
                 saldate: saldate1
             }
-            axios.post("http://localhost:9000/api/secretary/generatesalarydetails", { payload, empid })
+            axios.post("https://amarelitebackend.onrender.com/api/secretary/generatesalarydetails", { payload, empid })
                 .then(response => {
                     alert("Changes added successfully!!")
                 })

@@ -12,7 +12,7 @@ function Maintainance({ oid }) {
 
   const payNow = async (M) => {
     try {
-      const response = await axios.post('http://localhost:9000/api/create-order', {
+      const response = await axios.post('https://amarelitebackend.onrender.com/api/create-order', {
         amount: parseFloat(amount),
         currency,
         receipt,
@@ -29,7 +29,7 @@ function Maintainance({ oid }) {
       setMessage('An error occurred while creating the order.');
     }
 
-    axios.post(`http://localhost:9000/api/getMaintainance`,{oid:oid,year:M.year,status:"Updated"})
+    axios.post(`https://amarelitebackend.onrender.com/api/getMaintainance`,{oid:oid,year:M.year,status:"Updated"})
     .then(response=>{
       alert("Updated")
     })
@@ -40,7 +40,7 @@ function Maintainance({ oid }) {
     const payload1={
       amount:amount
     }
-    axios.post("http://localhost:9000/api/owner/addamount",payload1)
+    axios.post("https://amarelitebackend.onrender.com/api/owner/addamount",payload1)
     .then(response=>{
       alert("Amount added succesfully")
     })
@@ -65,7 +65,7 @@ function Maintainance({ oid }) {
       order_id: orderId,
       handler: async (response) => {
         try {
-          const captureResponse = await axios.post('http://localhost:9000/api/capture-payment', {
+          const captureResponse = await axios.post('https://amarelitebackend.onrender.com/api/capture-payment', {
             paymentId: response.razorpay_payment_id,
             amount: parseFloat(amount),
           });
@@ -100,7 +100,7 @@ function Maintainance({ oid }) {
   useEffect(() => {
     
     axios
-      .get(`http://localhost:9000/api/getMaintainance/${oid}`)
+      .get(`https://amarelitebackend.onrender.com/api/getMaintainance/${oid}`)
       .then((response) => {
         setMaintainance(response.data);
       })
